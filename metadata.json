@@ -1,0 +1,6 @@
+{
+  "name": "Fantasy Character Generator",
+  "description": "An interactive fantasy character generator with names, classes, attributes, cartoon portraits, and generated origin backstories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

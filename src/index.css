@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cinzel Decorative', 'Uncial Antiqua', 'Cormorant Garamond', serif;
+    --font-uncial: 'Uncial Antiqua', cursive, serif;
+    --font-cinzel-dec: 'Cinzel Decorative', 'Cinzel', serif;
+    --font-cinzel: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #0d0a08;
+    color: #d8cfc4;
+    font-family: var(--font-sans);
+    min-height: 100vh;
+  }
+}
+
+.font-uncial {
+  font-family: 'Uncial Antiqua', 'Cinzel Decorative', Georgia, serif;
+}
+
+.font-cinzel-decorative {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-garamond {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Ancient Alchemist's Workbench Dark Textured Background */
+.alchemist-workbench-bg {
+  background-color: #0a0806;
+  background-image: 
+    /* Candlelight ambient glows on the workbench surface */
+    radial-gradient(circle at 15% 15%, rgba(212, 149, 62, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 60%, rgba(197, 160, 89, 0.07) 0%, transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(180, 83, 9, 0.08) 0%, transparent 50%),
+    /* Ancient Dark Oak Timber Planks and Woodgrain Lines */
+    repeating-linear-gradient(
+      90deg,
+      rgba(24, 18, 14, 0.95) 0px,
+      rgba(20, 15, 12, 0.95) 120px,
+      rgba(15, 11, 9, 0.98) 121px,
+      rgba(26, 20, 16, 0.95) 240px
+    ),
+    /* Subtle aged parchment & wood grain noise pattern */
+    radial-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 0);
+  background-size: auto, auto, auto, auto, 240px 100%, 24px 24px;
+}
+
+/* Magical Glowing Border Effect around Main Workbench Containers */
+.arcane-glow-border {
+  position: relative;
+  box-shadow: 
+    0 0 0 1px rgba(197, 160, 89, 0.35),
+    0 0 25px -5px rgba(197, 160, 89, 0.22),
+    0 0 50px -10px rgba(217, 119, 6, 0.15),
+    inset 0 0 20px -5px rgba(197, 160, 89, 0.08);
+}
+
+.arcane-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(229, 193, 121, 0.8) 0%,
+    rgba(197, 160, 89, 0.2) 25%,
+    rgba(147, 51, 234, 0.3) 50%,
+    rgba(197, 160, 89, 0.2) 75%,
+    rgba(229, 193, 121, 0.7) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: magicalBorderPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes magicalBorderPulse {
+  0% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 4px rgba(197, 160, 89, 0.3));
+  }
+  50% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.6)) drop-shadow(0 0 20px rgba(180, 83, 9, 0.4));
+  }
+  100% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.4));
+  }
+}
+
+/* Subtle magical runic shimmer animation */
+@keyframes runicAura {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.03) rotate(1deg);
+  }
+}
+
+.animate-runic-aura {
+  animation: runicAura 10s ease-in-out infinite;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0a08;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d241d;
+  border-radius: 9999px;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a059;
+}
